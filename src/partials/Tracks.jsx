@@ -5,7 +5,7 @@ function FeaturesBlocks() {
 		<section className="relative" id="tracks">
 			{/* Section background (needs .relative class on parent and next sibling elements) */}
 			<div
-				className="absolute inset-0 top-1/2 md:mt-24 lg:mt-0 bg-orange-600/20 pointer-events-none"
+				className="hidden absolute inset-0 top-1/2 md:mt-24 lg:mt-0 bg-orange-600/20 pointer-events-none"
 				aria-hidden="true"></div>
 			<div className="absolute left-0 right-0 bottom-0 m-auto w-px p-px h-20 bg-gray-200 transform translate-y-1/2"></div>
 
@@ -18,11 +18,14 @@ function FeaturesBlocks() {
 							Duis aute irure dolor in reprehenderit in voluptate velit esse
 							cillum dolore eu fugiat nulla pariatur excepteur sint occaecat
 							cupidatat.
+						<h2 className="h2 mb-4">Tracks</h2>
+						<p className="text-xl italic text-gray-600">
+							Will be announced soon!
 						</p>
 					</div>
 
 					{/* Items */}
-					<div className="max-w-sm mx-auto grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
+					<div className="max-w-sm mx-auto hidden grid gap-6 md:grid-cols-2 lg:grid-cols-3 items-start md:max-w-2xl lg:max-w-none">
 						{/* 1st item */}
 						<div className=" dk-color relative flex flex-col items-center p-6 bg-white rounded shadow-xl">
 							<svg

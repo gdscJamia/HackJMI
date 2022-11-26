@@ -7,7 +7,7 @@ function FAQ(props) {
 		{
 			question: "Is it an individual event or a team event?",
 			answer:
-				"Participants are to register individually. If you already have a team, please ask your teammates to register too. The team size is mandatory is to be between <strong>2-4 members</strong>.",
+				"Participants are to register individually. If you already have a team, please ask your teammates to register too. The team size is mandatory is to be between <strong>1-4 members</strong>.",
 		},
 		{
 			question: "What is the registration fee?",

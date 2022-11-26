@@ -23,7 +23,8 @@ function Register() {
 								data-hackathon-slug="YOUR-HACKATHON-SLUG"
 								data-button-theme="light"></div>
 
-							<strong>To register, follow these steps:</strong>
+							<div className="italic">Coming Soon</div>
+							{/* <strong>To register, follow these steps:</strong>
 							<ol className="flex flex-col gap-2 mt-4">
 								<li>1. Click the "Apply with Devfolio" button below</li>
 								<li>
@@ -39,7 +40,7 @@ function Register() {
 									5. Manage your team and submissions on your Devfolio hackathon
 									dashboard.
 								</li>
-							</ol>
+							</ol> */}
 						</p>
 					</div>
 				</div>

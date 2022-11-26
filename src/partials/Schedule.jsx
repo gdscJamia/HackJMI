@@ -1,8 +1,10 @@
-
 import React from "react";
 
 function Schedule(props) {
 	const isdarktheme= props.theme;
+import React from "react";
+
+function Schedule() {
 	const eventSchedule = [
 		{
 			interval: "10th December 2022",
@@ -39,6 +41,7 @@ function Schedule(props) {
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center ">
 						<h1 className="theme-text h2 mb-4">Schedule</h1>
+						<h1 className="h2 mb-4">Schedule</h1>
 
 						<div className="flex flex-col  w-full md:pb-12 pb-16">
 							<p className="italic text-gray-500">
@@ -49,6 +52,8 @@ function Schedule(props) {
 									<div className="w-4 h-4 bg-white border-black border-2 ml-[1px] rounded-full " />
 									<div className={`flex w-full flex-col border-l-2 ${isdarktheme? "border-black" : "border-white"} mb-5 mt-3 m-2`}>
 										<div className="theme-text pl-4 rounded-lg text-md  opacity-50">
+									<div className="flex w-full flex-col border-l-2 border-black mb-5 mt-3 m-2">
+										<div className="pl-4 rounded-lg text-md  opacity-50">
 											{event.interval}
 										</div>
 										<div className="theme-text p-4 pb-1 text-xl rounded-lg text-black font-semibold">

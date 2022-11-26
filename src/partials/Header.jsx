@@ -126,6 +126,7 @@ function Header(props) {
 					opacity: isNavOpen ? 1 : 0,
 					pointerEvents: isNavOpen ? "all" : "none",
 				}}
+				onClick={() => setIsNavOpen(false)}
 			/>
 
 			<header
@@ -140,11 +141,12 @@ function Header(props) {
 							{/* Logo */}
 
 							<a href="#" className="flex gap-2" aria-label="Cruip">
-							<img src={Logo} alt="Logo" className="w-14" />
-
+								<img src={Logo} alt="Logo" className="w-14" />
 							
 								<p className="self-center font-bold text-orange-600">#ACK</p>
 								<p className=" theme-text self-center font-semibold">JMI</p>
+								{/* <p className="self-center font-bold text-orange-600">#ACK</p>
+								<p className="self-center font-semibold">JMI</p> */}
 							</a>
 						</div>
 
@@ -233,7 +235,8 @@ function Header(props) {
 												href={tab.href}
 												className={`font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out
 											${document.location.hash === tab.href && "text-orange-600 font-semibold"}
-										`}>
+										`}
+												onClick={() => setIsNavOpen(false)}>
 												{tab.name}
 											</a>
 										</li>

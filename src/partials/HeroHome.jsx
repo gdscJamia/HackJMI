@@ -19,7 +19,6 @@ function HeroHome(props) {
 			<div
 				className="absolute left-1/2 transform -translate-x-1/2 bottom-0 pointer-events-none"
 				aria-hidden="true">
-
 				<svg
 					width="1360"
 					height="578"
@@ -32,9 +31,9 @@ function HeroHome(props) {
 							x2="50%"
 							y2="100%"
 							id="illustration-01">
-							<stop stopColor="#F8B05C" offset="0%" />
-							<stop stopColor="#F8B05C" offset="77.402%" />
-							<stop stopColor="#F9931C" offset="100%" />
+							<stop stopColor="#f0a500" offset="0%" />
+							<stop stopColor="#e34826" offset="77.402%" />
+							<stop stopColor="#e34826" offset="100%" />
 						</linearGradient>
 					</defs>
 					<g fill="url(#illustration-01)" fillRule="evenodd">
@@ -46,17 +45,28 @@ function HeroHome(props) {
 
 			<div className="max-w-6xl mx-auto px-4 sm:px-6">
 				{/* Hero content */}
-				<div className="pt-32 pb-12 md:pt-40 md:pb-20">
+				<div className="pt-12 pb-12 md:pt-16 md:pb-20">
 					{/* Section header */}
 					<div className="text-center pb-12 md:pb-16">
+						<img src={Logo} alt="Logo" className="w-40 m-auto " />
+
 						<h1
 							className="text-5xl md:text-6xl font-extrabold leading-tighter tracking-tighter mb-4"
 							data-aos="zoom-y-out">
 							<span className="text-orange-500">#ACK</span>
 							<span className="theme-text text-gray-900 ml-4">JMI</span>
+							<span className="text-transparent bg-clip-text bg-gradient-to-r to-primary from-secondary">
+								#ACK
+							</span>
+							<span
+								className="text-white ml-4"
+								style={{
+									"-webkit-text-stroke": "2px #494949",
+								}}>
+								JMI
+							</span>
 						</h1>
 						<div className="max-w-3xl mx-auto">
-						
 							<p
 								className="theme-text text-xl text-gray-600 mb-8"
 								data-aos="zoom-y-out"
@@ -70,7 +80,7 @@ function HeroHome(props) {
 								<div>
 									<a
 										className="btn 
-										font-semibold w-full sm:w-auto sm:ml-4 self-center hover:bg-orange-400 bg-orange-600 text-white"
+										font-semibold w-full sm:w-auto sm:ml-4 self-center bg-gradient-to-r bg-primary hover:bg-secondary text-white transition-all"
 										href="#register">
 										Register
 									</a>
@@ -89,9 +99,9 @@ function HeroHome(props) {
 								</div>
 							</div>
 						</div>
-						<img src={Logo} alt="Logo" className="w-80 m-auto "  />
 						<div className="max-w-3xl mx-auto flex flex-col">
 							<p className="theme-text text-gray-600 mt-36 text-sm">
+							<p className="text-gray-600 mt-12 text-sm">
 								in Collaboration with
 							</p>
 							{isdarktheme?(
