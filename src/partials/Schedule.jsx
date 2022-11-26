@@ -1,13 +1,11 @@
-import React, { useState, useRef, useEffect, Fragment } from "react";
-import { render } from "react-dom";
-import Transition from "../utils/Transition";
-import { Timeline, Event } from "react-timeline-scribble";
+
+import React from "react";
 
 function Schedule(props) {
 	const isdarktheme= props.theme;
-  const eventSchedule = [
+	const eventSchedule = [
 		{
-			interval: "1st December 2022",
+			interval: "10th December 2022",
 			title: "Registration Begins",
 			description: "",
 		},
@@ -24,7 +22,7 @@ function Schedule(props) {
 			title: "Hackathon Ends",
 		},
 		{
-			interval: "30th January 2023",
+			interval: "4th February 2023",
 			title: "Closing Ceremony",
 		},
 	];
@@ -41,11 +39,15 @@ function Schedule(props) {
 					{/* Section header */}
 					<div className="max-w-3xl mx-auto text-center ">
 						<h1 className="theme-text h2 mb-4">Schedule</h1>
+
 						<div className="flex flex-col  w-full md:pb-12 pb-16">
+							<p className="italic text-gray-500">
+								{"("} Dates are tentative and subject to change {")"}
+							</p>
 							{eventSchedule.map((event, index) => (
 								<div>
 									<div className="w-4 h-4 bg-white border-black border-2 ml-[1px] rounded-full " />
-									<div className={`flex w-full flex-col border-l-2 ${isdarktheme?"border-black":"border-white"} mb-5 m-2`}>
+									<div className={`flex w-full flex-col border-l-2 ${isdarktheme? "border-black" : "border-white"} mb-5 mt-3 m-2`}>
 										<div className="theme-text pl-4 rounded-lg text-md  opacity-50">
 											{event.interval}
 										</div>
