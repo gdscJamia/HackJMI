@@ -26,7 +26,7 @@ function Swags() {
 							x: 0,
 						}}
 						animate={{
-							y: active ? 0 : 10,
+							y: active ? -12 : -17,
 						}}
 						transition={{
 							duration: 0.5,
@@ -62,7 +62,7 @@ function Swags() {
 				<div className="md:w-1/5 w-3/4 flex flex-col justify-center items-center">
 					<img
 						src={isDarkTheme ? `${XYZwhite}` : `${XYZ}`}
-						className="w-32  md:mb-4 md:p-5 p-3"
+						className="w-40  md:mb-4 md:p-5 p-3"
 					/>
 					<div className="mt-6">
 						<p className=" dark:text-white/60">
@@ -72,7 +72,7 @@ function Swags() {
 					</div>
 				</div>
 				<div className="md:w-1/5 w-3/4 flex flex-col justify-center items-center">
-					<img src={GOG} className="w-32 mt-5 md:mt-1 md:p-5 p-3" />
+					<img src={GOG} className="w-40 mt-5 md:mt-1 md:p-5 p-3" />
 					<div className="mt-6 text-center md:text-left">
 						<p className=" dark:text-white/60">
 							Free discount coupon codes for{" "}

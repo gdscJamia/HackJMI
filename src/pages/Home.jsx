@@ -19,6 +19,7 @@ import Discordwhite from "../images/brands/discordwhite.png";
 import CountdownTimer from "../partials/CountdownTimer";
 import Prizes from "../partials/Prizes";
 import Contact from "../partials/Contact";
+import CommunityPartner from "../partials/CommunityPartner";
 
 export const DarkThemeContext = React.createContext({
 	isDarkTheme: false,
@@ -61,8 +62,9 @@ function Home() {
 					<About />
 					<Tracks />
 					<Schedule />
-					{/* <Prizes /> */}
+					<Prizes />
 					<Sponsors />
+					<CommunityPartner />
 					<Register />
 					<FAQ />
 					<Contact />

@@ -17,7 +17,6 @@ import Devfoliowhite from "../images/sponsors/devfoliowhite.png";
 import Polygonwhite from "../images/sponsors/polygonwhite.png";
 import Solanawhite from "../images/sponsors/solanawhite.png";
 import M16Labs from "../images/sponsors/m16labs-logo.png";
-import { CgCommunity } from "react-icons/cg";
 
 import { DarkThemeContext } from "../pages/Home";
 import { Link } from "react-router-dom";
@@ -145,31 +144,6 @@ function Sponsers(props) {
 						))}
 					</div>
 				</div>
-				<div className="border" />
-				<div
-					className="max-w-3xl mx-auto flex flex-col justify-center items-center text-center pb-12 md:pb-16 md:pt-16"
-					id="community-partners">
-					<CgCommunity className="w-16 h-16 text-orange-600/50 dark:text-white/30 mb-2" />
-					<h1 className="dark:text-white h3 mb-4">Community Partners</h1>
-					<p className="text-gray-600 dark:text-white/50">
-						We are looking for community partners to help us spread the word
-						about the event. If you are interested in partnering with us, Fill
-						out the form below!
-					</p>
-					<div>
-						<button
-							className="btn btn-primary mt-4 bg-orange-600 hover:scale-95
-								hover:shadow-xl hover:shadow-orange-600/10 hover:bg-orange-700
-								transition-all my-5
-								text-white"
-							onClick={() => {
-								window.open("https://bit.ly/hackjmi-partner", "_blank");
-							}}>
-							Fill Community Partner Form
-						</button>
-					</div>
-				</div>
-
 				<div className="border" />
 			</div>
 		</section>
