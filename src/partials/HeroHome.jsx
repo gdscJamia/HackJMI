@@ -90,7 +90,19 @@ function HeroHome(props) {
 										How To Register ?
 									</a>
 								</div>
-								<div>
+								{
+								isDarkTheme ? 
+									<div
+									className="apply-button self-center"
+									data-hackathon-slug="hack-jmi"
+									data-button-theme="dark"></div>
+									:
+									<div
+									className="apply-button self-center"
+									data-hackathon-slug="hack-jmi"
+									data-button-theme="light"></div>
+								}
+								{/* <div>
 									<a
 										className={`btn
 										font-semibold w-full sm:w-auto sm:ml-4 self-center ${isDarkTheme?"hover:bg-gray-600 bg-gray-800":"hover:bg-gray-300 bg-gray-200"}`}
@@ -103,7 +115,7 @@ function HeroHome(props) {
 											Register With Devfolio
 										</span>
 									</a>
-								</div>
+								</div> */}
 							</div>
 							<div className="mt-4 flex flex-col items-center"
 								data-aos="zoom-y-out"
