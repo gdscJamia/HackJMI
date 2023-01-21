@@ -19,6 +19,7 @@ import CountdownTimer from "../partials/CountdownTimer";
 import Prizes from "../partials/Prizes";
 import Contact from "../partials/Contact";
 import CommunityPartner from "../partials/CommunityPartner";
+import Events from "../partials/Events";
 
 export const DarkThemeContext = React.createContext({
 	isDarkTheme: false,
@@ -76,8 +77,10 @@ function Home() {
 					<About />
 					<Tracks />
 					<Schedule />
+					<Events />
 					<Prizes />
 					<Sponsors />
+					
 					<CommunityPartner />
 					<Register />
 					<FAQ />
