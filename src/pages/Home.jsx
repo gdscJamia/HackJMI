@@ -10,7 +10,6 @@ import Schedule from "../partials/Schedule";
 import Sponsors from "../partials/Sponsors";
 import Register from "../partials/Register";
 import FAQ from "../partials/Faq";
-import Events from "../partials/Events";
 
 import {FaDiscord,FaWhatsapp,FaInstagram} from "react-icons/fa"
 
@@ -77,7 +76,6 @@ function Home() {
 					<About />
 					<Tracks />
 					<Schedule />
-					<Events/>
 					<Prizes />
 					<Sponsors />
 					<CommunityPartner />
