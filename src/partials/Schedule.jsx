@@ -55,7 +55,9 @@ function Schedule(props) {
 						</div>
 					</div>
 				</div>
+				<div className="border" />
 			</div>
+
 		</section>
 	);
 }

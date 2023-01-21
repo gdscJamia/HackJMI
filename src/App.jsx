@@ -11,6 +11,11 @@ import './css/style.css';
 import AOS from 'aos';
 
 import Home from './pages/Home';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
+
+
+const queryClient = new QueryClient();
 
 
 function App() {
@@ -44,9 +49,12 @@ function App() {
 
 	return (
 		<>
-			<Routes>
-				<Route exact path="/" element={<Home />} />
-			</Routes>
+			<QueryClientProvider client={queryClient}>
+				<Routes>
+					<Route exact path="/" element={<Home />} />
+				</Routes>
+				<ReactQueryDevtools initialIsOpen={false} />
+			</QueryClientProvider>
 		</>
 	);
 }
