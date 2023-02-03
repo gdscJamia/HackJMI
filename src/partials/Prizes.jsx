@@ -4,7 +4,7 @@ import React, { useContext } from "react";
 // import XYZ from "../images/sponsors/xyz.png";
 // import XYZwhite from "../images/sponsors/xyzwhite.png";
 // import Logo from "../images/logo.png";
-import { DarkThemeContext } from "../pages/Home";
+import { DarkThemeContext } from "../App";
 import PrizesComponent from "../components/Prizes/Prizes";
 import Swags from "../components/Prizes/Swags";
 // import Swags from "../components/Prizes/Swags";

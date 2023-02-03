@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { DarkThemeContext } from "../pages/Home";
+import { DarkThemeContext } from "../App";
 import tracksData from "../data/tracks";
 import { motion } from "framer-motion";
 import TrackCard from "../components/Tracks/Card";

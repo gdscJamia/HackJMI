@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { DarkThemeContext } from "../pages/Home";
+import { DarkThemeContext } from "../App";
 
 function Schedule(props) {
 	const { isDarkTheme, setIsDarkTheme } = useContext(DarkThemeContext);

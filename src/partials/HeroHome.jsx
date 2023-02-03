@@ -9,7 +9,7 @@ import GDSCwhite from "../images/brands/gdscwhite.png";
 import IEEECS from "../images/brands/ieeecs.png";
 import IEEECSwhite from "../images/brands/ieeecswhite.png";
 import Logo from "../images/logo.png";
-import { DarkThemeContext } from "../pages/Home";
+import { DarkThemeContext } from "../App";
 import { FaDiscord, FaWhatsapp } from "react-icons/fa";
 import ThemeImage from "../components/Image";
 
@@ -93,19 +93,23 @@ function HeroHome(props) {
 								<div
 									className="apply-button self-center"
 									data-hackathon-slug="hack-jmi"
-									data-button-theme="dark">
-								</div>
+									data-button-theme="dark"></div>
 							</div>
-							<div className="mt-4 flex flex-col items-center"
+							<div
+								className="mt-4 flex flex-col items-center"
 								data-aos="zoom-y-out"
 								data-aos-delay="300">
-								<p className="theme-text text-gray-600 text-sm">Join our Community</p>
+								<p className="theme-text text-gray-600 text-sm">
+									Join our Community
+								</p>
 								<div className="flex gap-5 mt-2">
-									<a href="https://chat.whatsapp.com/F6k9ATiCBqUJJgQTE8TAyi" target="_blank">
-										<FaWhatsapp className="w-10 h-10 dark:text-white hover:scale-90 transition-all"/>
+									<a
+										href="https://chat.whatsapp.com/F6k9ATiCBqUJJgQTE8TAyi"
+										target="_blank">
+										<FaWhatsapp className="w-10 h-10 dark:text-white hover:scale-90 transition-all" />
 									</a>
 									<a href="https://bit.ly/hackjmi-discord" target="_blank">
-										<FaDiscord className="w-10 h-10 dark:text-white hover:scale-90 transition-all"/>
+										<FaDiscord className="w-10 h-10 dark:text-white hover:scale-90 transition-all" />
 									</a>
 								</div>
 							</div>
@@ -115,7 +119,7 @@ function HeroHome(props) {
 								in Collaboration with
 							</p>
 							<div className="flex justify-center flex-wrap items-center gap-4">
-								<ThemeImage 
+								<ThemeImage
 									dark={IEEECSwhite}
 									light={IEEECS}
 									className={"w-32 h-32 object-contain"}
@@ -125,11 +129,7 @@ function HeroHome(props) {
 									light={IEEE}
 									className={"w-32 h-32"}
 								/>
-								<ThemeImage
-									dark={GDSCwhite}
-									light={GDSC}
-									className={"w-32"}
-								/>
+								<ThemeImage dark={GDSCwhite} light={GDSC} className={"w-32"} />
 								<img src={Hashes} className="w-32 h-32 scale-50" />
 							</div>
 						</div>

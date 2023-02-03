@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Countdown from "react-countdown";
-import { DarkThemeContext } from "../pages/Home";
+import { DarkThemeContext } from "../App";
 
 const renderer = ({
 	days,

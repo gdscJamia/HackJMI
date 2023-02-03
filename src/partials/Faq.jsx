@@ -1,6 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import React, { useContext } from "react";
-import { DarkThemeContext } from "../pages/Home";
+import { DarkThemeContext } from "../App";
 
 function FAQ(props) {
 	const { isDarkTheme } = useContext(DarkThemeContext);

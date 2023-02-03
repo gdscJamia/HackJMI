@@ -21,7 +21,7 @@ import M16Labs from "../images/sponsors/m16labs-logo.png";
 import Axure from "../images/sponsors/axure.png";
 import Streamyard from "../images/sponsors/streamyard.png";
 
-import { DarkThemeContext } from "../pages/Home";
+import { DarkThemeContext } from "../App";
 import { Link } from "react-router-dom";
 
 function Sponsers(props) {
@@ -67,7 +67,7 @@ function Sponsers(props) {
 			{
 				dark: Streamyard,
 				light: Streamyard,
-				src: "https://streamyard.com/"
+				src: "https://streamyard.com/",
 			},
 			{
 				dark: GOG,
@@ -87,9 +87,8 @@ function Sponsers(props) {
 			{
 				dark: Axure,
 				light: Axure,
-				src: "https://www.axure.com/"
-			}
-			
+				src: "https://www.axure.com/",
+			},
 		],
 		"Certificate Partners": [
 			{
@@ -119,12 +118,14 @@ function Sponsers(props) {
 						<h1 className="dark:text-white h2 mb-4" data-aos="zoom-in">
 							Sponsors
 						</h1>
-						<div className="my-5 flex justify-center items-center gap-2" data-aos="zoom-in">
+						<div
+							className="my-5 flex justify-center items-center gap-2"
+							data-aos="zoom-in">
 							<p className="text-gray-600">Want To Sponsor Us?</p>
-							<a href="https://drive.google.com/file/d/1rygr-fCBemNPIAhNjEM8bg3mOGGT99Zr/view?usp=sharing"
+							<a
+								href="https://drive.google.com/file/d/1rygr-fCBemNPIAhNjEM8bg3mOGGT99Zr/view?usp=sharing"
 								target="_blank"
-								className="dark:text-white font-semibold hover:scale-105 transition-all"
-							>
+								className="dark:text-white font-semibold hover:scale-105 transition-all">
 								Click Here
 							</a>
 						</div>
@@ -148,11 +149,11 @@ function Sponsers(props) {
 												onClick={() => {
 													window.open(sponsor.src, "_blank");
 												}}>
-													<ThemeImage
-														dark={sponsor.dark}
-														light={sponsor.light}
-														className={"w-full rounded-md"}
-													/>
+												<ThemeImage
+													dark={sponsor.dark}
+													light={sponsor.light}
+													className={"w-full rounded-md"}
+												/>
 											</button>
 										);
 									})}
@@ -161,7 +162,7 @@ function Sponsers(props) {
 						))}
 					</div>
 				</div>
-				
+
 				<div className="border" />
 			</div>
 		</section>

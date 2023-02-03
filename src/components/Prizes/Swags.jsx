@@ -5,7 +5,7 @@ import XYZwhite from "../../images/sponsors/xyzwhite.png";
 import m16 from "../../images/sponsors/m16labs-logo.png";
 import Logo from "../../images/logo.png";
 import { motion } from "framer-motion";
-import { DarkThemeContext } from "../../pages/Home";
+import { DarkThemeContext } from "../../App";
 import ThemeImage from "../Image";
 
 function Swags() {
