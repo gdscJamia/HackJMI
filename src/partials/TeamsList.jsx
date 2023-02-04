@@ -46,17 +46,6 @@ function TeamsList({ teams = new TeamService() }) {
 
 	const handleTagClick = (tag) => {
 		setSelectedTags([tag]);
-		// if (selectedTags.includes(tag)) {
-		// 	setSelectedTags(selectedTags.filter((_tag) => _tag !== tag));
-		// } else {
-		// 	if (tag === TeamTypes.All) {
-		// 		setSelectedTags([tag]);
-		// 		return;
-		// 	}
-		// 	setSelectedTags((prev) => {
-		// 		return [...prev.filter((_tag) => _tag !== TeamTypes.All), tag];
-		// 	});
-		// }
 	};
 
 	const tabsData = useMemo(() => {
@@ -66,7 +55,7 @@ function TeamsList({ teams = new TeamService() }) {
 				data: teams.teams.get(TeamTypes.Judge) ?? [],
 				TeamCardProps: {
 					className: {
-						root: "md:h-96 m-3",
+						root: "sm:h-96 h-80 m-3 ",
 					},
 				},
 				className: {
@@ -101,11 +90,17 @@ function TeamsList({ teams = new TeamService() }) {
 					teamCard:
 						"grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 md:gap-10 mt-5",
 				},
+				TeamCardProps: {
+					className: {
+						root: "h-48 md:h-72 ",
+					},
+				},
 				extraComponent: () => {
 					return (
-						<div>
+						<div className="flex justify-center items-center">
 							<Select
 								className="w-64"
+								isSearchable={false}
 								options={teamTabs.map((tab) => {
 									return {
 										label: tab.name,
@@ -128,8 +123,6 @@ function TeamsList({ teams = new TeamService() }) {
 		];
 	}, [selectedTags, teams]);
 
-	console.log(tabsData);
-
 	return (
 		<div className="w-full  md:px-20 py-10">
 			{tabsData
@@ -147,9 +140,16 @@ function TeamsList({ teams = new TeamService() }) {
 										return (
 											<motion.div
 												key={i}
-												initial={{ opacity: 0 }}
+												initial={{
+													opacity: 0,
+												}}
 												animate={{ opacity: 1 }}
-												exit={{ opacity: 0 }}>
+												exit={{ opacity: 0 }}
+												transition={{
+													duration: 0.2,
+													delay: i * 0.05,
+													ease: "linear",
+												}}>
 												<TeamCard
 													key={team.id}
 													name={team.name}

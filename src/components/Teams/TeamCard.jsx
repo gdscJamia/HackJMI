@@ -10,8 +10,8 @@ function TeamCard({ name, tags, photo, designation, onTagClick, className }) {
 
 	return (
 		<div
-			className={`h-48 md:h-72 ${className?.root} overflow-hidden md:rounded-md`}
-			ref={cardRef}   
+			className={`${className?.root} overflow-hidden md:rounded-md`}
+			ref={cardRef}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}>
 			<motion.img
@@ -41,15 +41,15 @@ function TeamCard({ name, tags, photo, designation, onTagClick, className }) {
 				transition={{
 					duration: 0.2,
 				}}>
-				<h1 className="md:text-lg tracking-wide font-thin">{name}</h1>
-				<p className="text-sm font-light tracking-wide opacity-50">
+				<h1 className="md:text-lg tracking-wide text-sm font-thin">{name}</h1>
+				<p className="md:text-sm text-center font-light tracking-wide text-xs opacity-50">
 					{designation}
 				</p>
 
-				<div className="md:mt-5 flex items-start flex-wrap gap-1 md:gap-5">
+				<div className="md:mt-5 flex items-center justify-center flex-col mt-2 md:flex-row flex-wrap gap-1 md:gap-5">
 					{tags.map((tag) => (
 						<button
-							className="text-sm bg-white/20 font-light rounded-md p-1 px-2 hover:bg-white/50"
+							className="md:text-sm text-xs bg-white/20 font-light rounded-md p-1 px-2 hover:bg-white/50"
 							onClick={() => {
 								onTagClick(tag);
 							}}>

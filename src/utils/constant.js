@@ -18,11 +18,11 @@ export const TeamTypes = {
 }
 
 export const designationMap = {
-    [TeamTypes.Technical]: 'Technical Team',
-    [TeamTypes.Organizing]: 'Organizing Team',
-    [TeamTypes.Design]: 'Design Team',
-    [TeamTypes.Social_Media_And_Content]: 'Social Media And Content Team',
+    [TeamTypes.Technical]: 'Technical',
+    [TeamTypes.Organizing]: 'Organizers',
+    [TeamTypes.Design]: 'Design',
+    [TeamTypes.Social_Media_And_Content]: 'Social Media & Content',
     [TeamTypes.Judge]: 'Judge',
     [TeamTypes.Speaker]: 'Speaker',
-    [TeamTypes.Outreach]: 'Outreach Team',
+    [TeamTypes.Outreach]: 'Outreach',
 }
