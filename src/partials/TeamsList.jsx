@@ -126,7 +126,7 @@ function TeamsList({ teams = new TeamService() }) {
 				},
 			},
 		];
-	}, [selectedTags]);
+	}, [selectedTags, teams]);
 
 	console.log(tabsData);
 
