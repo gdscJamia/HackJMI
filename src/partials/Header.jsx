@@ -76,36 +76,6 @@ function Header({ UpdateTheme }) {
 	const [observerMap, setObserverMap] = useState({});
 	const [tabData, setTabData] = useState(tabs);
 
-	// useEffect(() => {
-	// 	const observers = tabData.map((tab) => {
-	// 		const section = document.querySelector(tab.href);
-	// 		const observer = new IntersectionObserver(
-	// 			(entries) => {
-	// 				entries.forEach((entry) => {
-	// 					if (entry.isIntersecting) {
-	// 						setObserverMap((prev) => ({
-	// 							...prev,
-	// 							[tab.href]: true,
-	// 						}));
-	// 					} else {
-	// 						setObserverMap((prev) => ({
-	// 							...prev,
-	// 							[tab.href]: false,
-	// 						}));
-	// 					}
-	// 				});
-	// 			},
-	// 			{ threshold: 0.5 }
-	// 		);
-	// 		observer.observe(section);
-	// 		return observer;
-	// 	});
-
-	// 	return () => {
-	// 		observers.forEach((observer) => observer.disconnect());
-	// 	};
-	// }, [observerMap]);
-
 	return (
 		<React.Fragment>
 			<div
@@ -249,18 +219,20 @@ function Header({ UpdateTheme }) {
 								<ul className="flex flex-col flex-grow justify-end flex-wrap items-center">
 									{tabData.map((tab, index) => (
 										<li key={index}>
-											<a
-												href={tab.href}
-												className={`font-medium text-gray-600 dark:text-gray-400 
+											<button
+												className={`w-full font-medium text-gray-600 dark:text-gray-400 
 												hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out
 											${
 												document.location.hash === tab.href &&
 												"text-orange-600 dark:text-orange-600 font-semibold"
 											}
 										`}
-												onClick={() => setIsNavOpen(false)}>
+												onClick={() => {
+													setIsNavOpen(false);
+													navigate(tab.path);
+												}}>
 												{tab.name}
-											</a>
+											</button>
 										</li>
 									))}
 								</ul>

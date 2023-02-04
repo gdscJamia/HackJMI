@@ -10,7 +10,7 @@ import { AnimatePresence } from "framer-motion";
 const excludeTags = [TeamTypes.Judge];
 
 function TeamsList({ teams = new TeamService() }) {
-	const [selectedTags, setSelectedTags] = useState([TeamTypes.Speaker]);
+	const [selectedTags, setSelectedTags] = useState([TeamTypes.Organizing]);
 	const teamTabs = [
 		{
 			name: "All",
@@ -80,6 +80,7 @@ function TeamsList({ teams = new TeamService() }) {
 					className: {
 						root: "md:h-96 m-3",
 					},
+					onTagClick: handleTagClick,
 				},
 				className: {
 					teamCard: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:gap-5",
@@ -98,7 +99,7 @@ function TeamsList({ teams = new TeamService() }) {
 						) ?? [],
 				className: {
 					teamCard:
-						"grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-10 mt-5",
+						"grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 md:gap-10 mt-5",
 				},
 				extraComponent: () => {
 					return (
@@ -131,37 +132,40 @@ function TeamsList({ teams = new TeamService() }) {
 
 	return (
 		<div className="w-full  md:px-20 py-10">
-			{tabsData.map((tab, _i) => {
-				return (
-					<div className="my-5 py-5" key={_i}>
-						<h1 className="h2 text-center dark:text-white pb-4">{tab.title}</h1>
-						{tab.extraComponent && tab.extraComponent()}
-						<div className={tab.className.teamCard}>
-							<AnimatePresence>
-								{tab.data.map((team, i) => {
-									return (
-										<motion.div
-											key={i}
-											initial={{ opacity: 0 }}
-											animate={{ opacity: 1 }}
-											exit={{ opacity: 0 }}>
-											<TeamCard
-												key={team.id}
-												name={team.name}
-												designation={team.designation}
-												onTagClick={handleTagClick}
-												tags={team.types}
-												photo={team.photo.url}
-												className={tab?.TeamCardProps?.className}
-											/>
-										</motion.div>
-									);
-								})}
-							</AnimatePresence>
+			{tabsData
+				.filter((tab) => tab.data.length > 0)
+				.map((tab, _i) => {
+					return (
+						<div className="my-5 py-5" key={_i}>
+							<h1 className="h2 text-center dark:text-white pb-4">
+								{tab.title}
+							</h1>
+							{tab.extraComponent && tab.extraComponent()}
+							<div className={tab.className.teamCard}>
+								<AnimatePresence>
+									{tab.data.map((team, i) => {
+										return (
+											<motion.div
+												key={i}
+												initial={{ opacity: 0 }}
+												animate={{ opacity: 1 }}
+												exit={{ opacity: 0 }}>
+												<TeamCard
+													key={team.id}
+													name={team.name}
+													designation={team.designation}
+													tags={team.types}
+													photo={team.photo.url}
+													{...tab.TeamCardProps}
+												/>
+											</motion.div>
+										);
+									})}
+								</AnimatePresence>
+							</div>
 						</div>
-					</div>
-				);
-			})}
+					);
+				})}
 		</div>
 	);
 }
