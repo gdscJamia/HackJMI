@@ -66,7 +66,7 @@ function Swags() {
 						light={XYZ}
 						className={"w-40  md:mb-4 md:p-5 p-3"}
 					/>
-					<div className="mt-6">
+					<div className="mt-6 text-center">
 						<p className=" dark:text-white/60">
 							Free <strong className="text-orange-600">.xyz</strong> domains
 							from gen.xyz.!!

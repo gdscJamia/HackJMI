@@ -32,7 +32,7 @@ function EventsCard({ event }) {
           </div>
         </div>
         <div className='flex-grow flex flex-col justify-center items-center md:items-start md:m-4 mt-3'>
-          <h1 className='dark:text-white h4 md:text-xl text-sm md:mb-1'>
+          <h1 className='dark:text-white text-start h4 md:text-xl text-sm md:mb-1'>
             {event.name}
           </h1>
           <p

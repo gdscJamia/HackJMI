@@ -52,12 +52,12 @@ function FAQ(props) {
 											: "hover:bg-orange-200 dark:hover:bg-gray-900"
 									} 
 								`}>
-									<span className="dark:text-white">{faq.question}</span>
+									<span className="dark:text-white text-start">{faq.question}</span>
 									<svg
 										xmlns="http://www.w3.org/2000/svg"
 										viewBox="0 0 24 24"
 										fill="currentColor"
-										className="w-6 h-6 ml-auto"
+										className="w-6 h-6 ml-auto dark:text-white"
 										style={{
 											transform: open ? "rotate(180deg)" : "",
 										}}>
