@@ -10,13 +10,14 @@ function TeamCard({ name, tags, photo, designation, onTagClick, className }) {
 
 	return (
 		<div
-			className={`${className?.root} overflow-hidden md:rounded-md`}
+			className={`${className?.root} overflow-hidden rounded-md`}
 			ref={cardRef}
+			data-aos="flip-right"
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}>
 			<motion.img
 				src={photo}
-				className="absolute object-cover md:rounded-md"
+				className="absolute object-cover rounded-md"
 				alt="team"
 				style={{
 					width: cardSize.width,
@@ -29,7 +30,7 @@ function TeamCard({ name, tags, photo, designation, onTagClick, className }) {
 			/>
 			<motion.div
 				className="z-10 p-3 
-                flex flex-col justify-center items-center group bg-black/60 text-white md:rounded-md"
+                flex flex-col justify-center items-center group bg-black/60 text-white rounded-md"
 				style={{
 					width: cardSize.width,
 					height: cardSize.height,
@@ -41,7 +42,7 @@ function TeamCard({ name, tags, photo, designation, onTagClick, className }) {
 				transition={{
 					duration: 0.2,
 				}}>
-				<h1 className="md:text-lg tracking-wide text-sm font-thin">{name}</h1>
+				<h1 className="md:text-lg tracking-wide text-sm font-thin text-center">{name}</h1>
 				<p className="md:text-sm text-center font-light tracking-wide text-xs opacity-50">
 					{designation}
 				</p>

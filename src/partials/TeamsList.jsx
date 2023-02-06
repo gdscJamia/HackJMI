@@ -1,4 +1,4 @@
-import React, { useMemo, useEffect } from "react";
+import React, { useMemo, useContext } from "react";
 import { TeamTypes } from "../utils/constant";
 import { useState } from "react";
 import { TeamService } from "../components/api/Teams";
@@ -6,10 +6,16 @@ import { motion } from "framer-motion";
 import TeamCard from "../components/Teams/TeamCard";
 import Select from "react-select";
 import { AnimatePresence } from "framer-motion";
+import { DarkThemeContext } from "../App";
+
 
 const excludeTags = [TeamTypes.Judge];
 
+
+
 function TeamsList({ teams = new TeamService() }) {
+	const { isDarkTheme } = useContext(DarkThemeContext);
+
 	const [selectedTags, setSelectedTags] = useState([TeamTypes.Organizing]);
 	const teamTabs = [
 		{
@@ -43,6 +49,21 @@ function TeamsList({ teams = new TeamService() }) {
 	];
 
 	console.log(teams);
+
+	const colourStyles = {
+		option: (styles) => ({
+			...styles,
+			color:"rgb(223 223 223)",
+		}),
+		control: (base,state) => ({
+			...base,
+			border: "1.5px solid rgb(25 25 25)",
+			'&:hover': {
+				border: '1.5px solid rgb(234 234 234 / 0.2)'
+			 }
+		
+		  })
+		}
 
 	const handleTagClick = (tag) => {
 		setSelectedTags([tag]);
@@ -88,18 +109,35 @@ function TeamsList({ teams = new TeamService() }) {
 						) ?? [],
 				className: {
 					teamCard:
-						"grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 md:gap-10 mt-5",
+						"grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 md:gap-10 mt-5 mx-1",
 				},
 				TeamCardProps: {
 					className: {
-						root: "h-48 md:h-72 ",
+						root: "h-48 md:h-72 md:m-0 m-1",
 					},
 				},
 				extraComponent: () => {
 					return (
 						<div className="flex justify-center items-center">
 							<Select
-								className="w-64"
+								className="w-64 dark:text-white"
+								 theme={(theme) => ({
+									...theme,
+									colors: isDarkTheme?{
+										...theme.colors,
+										primary25:'rgb(234 234 234 / 0.2)',
+										primary:"rgb(25 25 25 / var(--tw-bg-opacity))",
+										primary50:'rgb(234 234 234/0.5)',
+										neutral0:"black",
+										neutral80:"rgb(223 223 223)"
+									}:{
+										...theme.colors,
+										primary25:'rgb(234 88 12 / 0.1)',
+										primary: 'rgb(234 88 12)',
+										primary50:'rgb(234 88 12/0.2)'
+									}
+								})}
+								styles={isDarkTheme?colourStyles:{}}
 								isSearchable={false}
 								options={teamTabs.map((tab) => {
 									return {
