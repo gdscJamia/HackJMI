@@ -2,11 +2,23 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { useComponentSize } from "../../hooks/useComponentSize";
 import { designationMap } from "../../utils/constant";
+import { FaLinkedin } from "react-icons/fa";
+import { BsLinkedin } from "react-icons/bs";
 
-function TeamCard({ name, tags, photo, designation, onTagClick, className }) {
+function TeamCard({
+	name,
+	tags,
+	photo,
+	designation,
+	onTagClick,
+	className,
+	linkedIn,
+}) {
 	const cardRef = useRef(null);
 	const cardSize = useComponentSize(cardRef);
 	const [isHovered, setIsHovered] = useState(false);
+
+	// console.log/);
 
 	return (
 		<div
@@ -42,7 +54,9 @@ function TeamCard({ name, tags, photo, designation, onTagClick, className }) {
 				transition={{
 					duration: 0.2,
 				}}>
-				<h1 className="md:text-lg tracking-wide text-sm font-thin text-center">{name}</h1>
+				<h1 className="md:text-lg tracking-wide text-sm font-thin text-center">
+					{name}
+				</h1>
 				<p className="md:text-sm text-center font-light tracking-wide text-xs opacity-50">
 					{designation}
 				</p>
@@ -52,12 +66,22 @@ function TeamCard({ name, tags, photo, designation, onTagClick, className }) {
 						<button
 							className="md:text-sm text-xs bg-white/20 font-light rounded-md p-1 px-2 hover:bg-white/50"
 							onClick={() => {
-								onTagClick(tag);
+								// console.log(onTagClick);
+								if (onTagClick) onTagClick(tag);
 							}}>
 							{designationMap[tag]}
 						</button>
 					))}
 				</div>
+				{linkedIn && (
+					<button
+						className="md:mt-5 mt-2"
+						onClick={() => {
+							window.open(linkedIn, "_blank");
+						}}>
+						<BsLinkedin className="text-2xl  cursor-pointer" />
+					</button>
+				)}
 			</motion.div>
 		</div>
 	);

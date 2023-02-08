@@ -1,4 +1,4 @@
-import React, { useMemo, useContext } from "react";
+import React, { useMemo, useContext, useEffect } from "react";
 import { TeamTypes } from "../utils/constant";
 import { useState } from "react";
 import { TeamService } from "../components/api/Teams";
@@ -8,10 +8,7 @@ import Select from "react-select";
 import { AnimatePresence } from "framer-motion";
 import { DarkThemeContext } from "../App";
 
-
-const excludeTags = [TeamTypes.Judge];
-
-
+const excludeTags = [TeamTypes.Judge, TeamTypes.Mentor];
 
 function TeamsList({ teams = new TeamService() }) {
 	const { isDarkTheme } = useContext(DarkThemeContext);
@@ -53,17 +50,16 @@ function TeamsList({ teams = new TeamService() }) {
 	const colourStyles = {
 		option: (styles) => ({
 			...styles,
-			color:"rgb(223 223 223)",
+			color: "rgb(223 223 223)",
 		}),
-		control: (base,state) => ({
+		control: (base, state) => ({
 			...base,
 			border: "1.5px solid rgb(25 25 25)",
-			'&:hover': {
-				border: '1.5px solid rgb(234 234 234 / 0.2)'
-			 }
-		
-		  })
-		}
+			"&:hover": {
+				border: "1.5px solid rgb(234 234 234 / 0.2)",
+			},
+		}),
+	};
 
 	const handleTagClick = (tag) => {
 		setSelectedTags([tag]);
@@ -88,12 +84,12 @@ function TeamsList({ teams = new TeamService() }) {
 				data: teams.teams.get(TeamTypes.Mentor) ?? [],
 				TeamCardProps: {
 					className: {
-						root: "md:h-96 m-3",
+						root: "h-48 md:h-72 md:m-0 m-1",
 					},
-					onTagClick: handleTagClick,
 				},
 				className: {
-					teamCard: "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 md:gap-5",
+					teamCard:
+						"grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 md:gap-10 mt-5 mx-1",
 				},
 			},
 			{
@@ -115,29 +111,32 @@ function TeamsList({ teams = new TeamService() }) {
 					className: {
 						root: "h-48 md:h-72 md:m-0 m-1",
 					},
+					onTagClick: handleTagClick,
 				},
 				extraComponent: () => {
 					return (
 						<div className="flex justify-center items-center">
 							<Select
 								className="w-64 dark:text-white"
-								 theme={(theme) => ({
+								theme={(theme) => ({
 									...theme,
-									colors: isDarkTheme?{
-										...theme.colors,
-										primary25:'rgb(234 234 234 / 0.2)',
-										primary:"rgb(25 25 25 / var(--tw-bg-opacity))",
-										primary50:'rgb(234 234 234/0.5)',
-										neutral0:"black",
-										neutral80:"rgb(223 223 223)"
-									}:{
-										...theme.colors,
-										primary25:'rgb(234 88 12 / 0.1)',
-										primary: 'rgb(234 88 12)',
-										primary50:'rgb(234 88 12/0.2)'
-									}
+									colors: isDarkTheme
+										? {
+												...theme.colors,
+												primary25: "rgb(234 234 234 / 0.2)",
+												primary: "rgb(25 25 25 / var(--tw-bg-opacity))",
+												primary50: "rgb(234 234 234/0.5)",
+												neutral0: "black",
+												neutral80: "rgb(223 223 223)",
+										  }
+										: {
+												...theme.colors,
+												primary25: "rgb(234 88 12 / 0.1)",
+												primary: "rgb(234 88 12)",
+												primary50: "rgb(234 88 12/0.2)",
+										  },
 								})}
-								styles={isDarkTheme?colourStyles:{}}
+								styles={isDarkTheme ? colourStyles : {}}
 								isSearchable={false}
 								options={teamTabs.map((tab) => {
 									return {
@@ -160,6 +159,10 @@ function TeamsList({ teams = new TeamService() }) {
 			},
 		];
 	}, [selectedTags, teams]);
+
+	useEffect(() => {
+		setSelectedTags(JSON.parse(JSON.stringify(selectedTags)));
+	}, [isDarkTheme]);
 
 	return (
 		<div className="w-full  md:px-20 py-10">
@@ -194,6 +197,7 @@ function TeamsList({ teams = new TeamService() }) {
 													designation={team.designation}
 													tags={team.types}
 													photo={team.photo.url}
+													linkedIn={team.linkedIn}
 													{...tab.TeamCardProps}
 												/>
 											</motion.div>

@@ -25,4 +25,5 @@ export const designationMap = {
     [TeamTypes.Judge]: 'Judge',
     [TeamTypes.Speaker]: 'Speaker',
     [TeamTypes.Outreach]: 'Outreach',
+    [TeamTypes.Mentor]: 'Mentor',
 }

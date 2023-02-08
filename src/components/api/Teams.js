@@ -35,6 +35,7 @@ export const getTeams = async () => {
                 head,
                 designation,
                 types,
+                linkedIn,
                 photo{
                     url
                 }
