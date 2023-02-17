@@ -11,6 +11,7 @@ import Sponsors from "../partials/Sponsors";
 import Register from "../partials/Register";
 import FAQ from "../partials/Faq";
 import Mentors from "../partials/Mentors";
+import TopTeams from "../partials/TopTeams";
 
 import { FaDiscord, FaWhatsapp, FaInstagram } from "react-icons/fa";
 
@@ -53,7 +54,8 @@ function Home() {
 			<main className="flex-grow">
 				{/*  Page sections */}
 				<HeroHome />
-				<CountdownTimer />
+				{/* <CountdownTimer /> */}
+				<TopTeams/>
 				<About />
 				<Tracks />
 				<Schedule />
