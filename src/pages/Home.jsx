@@ -1,6 +1,6 @@
 import React from "react";
 import ThemeImage from "../components/Image";
-
+import TopTeams from "../partials/TopTeams";
 import Header from "../partials/Header";
 import HeroHome from "../partials/HeroHome";
 import About from "../partials/About";
@@ -53,7 +53,8 @@ function Home() {
 			<main className="flex-grow">
 				{/*  Page sections */}
 				<HeroHome />
-				<CountdownTimer />
+				{/* <CountdownTimer /> */}
+				<TopTeams/>
 				<About />
 				<Tracks />
 				<Schedule />
