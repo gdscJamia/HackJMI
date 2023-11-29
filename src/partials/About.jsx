@@ -12,19 +12,17 @@ function Features() {
 					<div className="max-w-3xl mx-auto text-center pb-12 md:pb-16">
 						<h1 className="dark:text-white h2 mb-4">About Us</h1>
 						<p className="md:text-xl text-gray-600 dark:text-gray-300 mt-5">
-							With the coding infatuation high in your nerves, brace yourself to
-							witness and participate in a{" "}
+							With the coding infatuation high in your nerves, 
+							brace yourself to witness and participate in a{" "}
 							<strong>"48-hour long hackathon"</strong>,{" "}
-							<strong>Hack JMI</strong>, brought to you under the collaboration
-							of <strong>IEEE JMI</strong> with the much revered{" "}
-							<strong>GDSC JMI</strong> and the{" "}
-							<strong>HASHes Coding Club</strong>. The entrancing challenge will
-							provide students the opportunity to mess with real-world problems
-							by remoulding them into something lucrative. "The simpler, the
-							merrier. The sufficient, the efficient." The participants are
-							required to form a team of 1-4 members (from the same college) in
-							order to take part in the contest and to draw effective and
-							efficient solutions to the given problems.
+							<strong>Hack JMI</strong>, brought to you by
+							<strong> IEEE JMI</strong>. The entrancing challenge 
+							ill provide students the opportunity to mess with real-world
+							problems by remoulding them into something lucrative.
+							"The simpler, the merrier. The sufficient, the efficient." 
+							The participants are required to form a team of <strong>2-4</strong> members
+							(from the same college) in order to take part in the contest 
+							and to draw effective and efficient solutions to the given problems.
 						</p>
 					</div>
 				</div>
